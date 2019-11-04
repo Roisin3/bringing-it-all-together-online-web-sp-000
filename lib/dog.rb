@@ -38,7 +38,7 @@ class Dog
   end
 
   def self.create(name:, breed:)
-    sql = <<-SQL 
+    sql = <<-SQL
       SELECT *
       FROM dogs
       WHERE name = ?
