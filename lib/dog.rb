@@ -37,4 +37,16 @@ class Dog
     self
   end
 
+  def self.create(name:, breed:)
+    sql = <<-SQL 
+      SELECT *
+      FROM dogs
+      WHERE name = ?
+      AND breed = ?
+      LIMIT 1
+    SQL
+
+    DB[:conn].execute(sql, name, breed)
+  end
+
 end
