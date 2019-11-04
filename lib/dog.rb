@@ -36,7 +36,7 @@ class Dog
     end
     self
   end
-=begin
+
   def self.find_or_create_by(name:, breed:)
     sql = <<-SQL
       SELECT *
@@ -56,7 +56,7 @@ class Dog
     end
     dog
   end
-=end
+
   def self.new_from_db(row)
     id = row[0]
     name = row[1]
